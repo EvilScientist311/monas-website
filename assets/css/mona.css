@@ -1,32 +1,97 @@
+/* Calm teal and warm neutrals for older adults and their families.
+   Keep semantic colours together so both themes share component states. */
+:root {
+  color-scheme: light;
+  --mona-accent: #245e63;
+  --mona-accent-hover: #17464b;
+  --mona-accent-active: #10373b;
+  --mona-heading: #214c50;
+  --mona-muted: #536763;
+  --mona-surface: #f0f4ef;
+  --mona-callout: #e3eee7;
+  --mona-button-text: #ffffff;
+  --mona-focus: #95632f;
+  --global-base-color: var(--mona-accent);
+  --global-bg-color: #fcfaf5;
+  --global-text-color: #293d3d;
+  --global-text-color-light: var(--mona-muted);
+  --global-link-color: var(--mona-accent);
+  --global-link-color-hover: var(--mona-accent-hover);
+  --global-link-color-visited: #535773;
+  --global-masthead-link-color: var(--mona-heading);
+  --global-masthead-link-color-hover: var(--mona-accent-hover);
+  --global-footer-bg-color: #e9efea;
+  --global-border-color: #cbd7cf;
+  --global-dark-border-color: #849a92;
+  --global-code-background-color: var(--mona-surface);
+  --global-code-text-color: var(--global-text-color);
+  --global-fig-caption-color: var(--mona-muted);
+  --global-thead-color: var(--mona-callout);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --mona-accent: #a0d2ce;
+  --mona-accent-hover: #c9e8e2;
+  --mona-accent-active: #e4f4ee;
+  --mona-heading: #d2e7df;
+  --mona-muted: #aec3ba;
+  --mona-surface: #213633;
+  --mona-callout: #28423c;
+  --mona-button-text: #142b2b;
+  --mona-focus: #edc48a;
+  --global-bg-color: #172927;
+  --global-text-color: #e4ede7;
+  --global-link-color-visited: #c5bddf;
+  --global-footer-bg-color: #203530;
+  --global-border-color: #47635a;
+  --global-dark-border-color: #829e92;
+}
+
 html { scroll-behavior: smooth; }
-body { background: #fcfbf7; }
-:root { --global-bg-color: #fcfbf7; --global-text-color: #303c37; --global-link-color: #285b50; --global-link-color-hover: #183e35; }
-.masthead { background: #fcfbf7; border-bottom: 1px solid #dedfd5; }
-.greedy-nav { background: #fcfbf7; }
-.page__title { font-family: Georgia, serif; font-weight: 400; line-height: 1.16; color: #234d43; font-size: 2.5em; }
-.page__content h2 { font-family: Georgia, serif; color: #234d43; font-weight: 400; border-bottom: 1px solid #dedfd5; padding-bottom: .4em; margin-top: 1.8em; }
+body { background: var(--global-bg-color); }
+.masthead { background: var(--global-bg-color); border-bottom: 1px solid var(--global-border-color); }
+.greedy-nav { background: var(--global-bg-color); }
+.page__title { font-family: Georgia, serif; font-weight: 400; line-height: 1.16; color: var(--mona-heading); font-size: 2.5em; }
+.page__content h2 { font-family: Georgia, serif; color: var(--mona-heading); font-weight: 400; border-bottom: 1px solid var(--global-border-color); padding-bottom: .4em; margin-top: 1.8em; }
 .page__content p, .page__content li { line-height: 1.75; }
-.mona-eyebrow { color: #527065; font-size: .72em; letter-spacing: .12em; font-weight: 700; }
-.mona-lead { font-size: 1.28em; line-height: 1.6; color: #345b4e; }
+.mona-eyebrow { color: var(--mona-muted); font-size: .72em; letter-spacing: .12em; font-weight: 700; }
+.mona-lead { font-size: 1.28em; line-height: 1.6; color: var(--mona-heading); }
 .mona-intro { padding: 0 0 1.4em; }
 .mona-text-link { display: inline-block; margin: .8em 1em; }
-.btn--primary { background: #285b50; border-radius: 5px; color: #fff !important; padding: .85em 1.15em; }
-.mona-monogram { width: 155px; height: 155px; border-radius: 50%; background: #e5ece3; color: #285b50; display: flex; align-items: center; justify-content: center; font: 48px Georgia, serif; border: 1px solid #d4dfd2; margin-bottom: 1.25em; }
+.btn--primary { background: var(--mona-accent); border-radius: 5px; color: var(--mona-button-text) !important; padding: .85em 1.15em; }
+.mona-monogram { width: 155px; height: 155px; border-radius: 50%; background: var(--mona-callout); color: var(--mona-accent); display: flex; align-items: center; justify-content: center; font: 48px Georgia, serif; border: 1px solid var(--global-border-color); margin-bottom: 1.25em; }
 .mona-portrait { width: 155px; height: 155px; border-radius: 50%; object-fit: cover; margin-bottom: 1.25em; }
-.mona-credentials, .mona-location { color: #657269; font-size: .86em; }
+.mona-credentials, .mona-location { color: var(--mona-muted); font-size: .86em; }
 .mona-profile p { line-height: 1.6; }
 .mona-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin: 1.7em 0; }
-.mona-cards > div { border: 1px solid #dce3d9; background: #f3f5ed; border-radius: 8px; padding: 1.2em; }
+.mona-cards > div { border: 1px solid var(--global-border-color); background: var(--mona-surface); border-radius: 8px; padding: 1.2em; }
 .mona-cards h3 { font-size: .95em; line-height: 1.5; margin: .5em 0; }
 .mona-cards p { font-size: .85em; margin-bottom: 0; }
-.mona-number { color: #78917d; font-size: .75em; letter-spacing: .1em; }
-.mona-callout { background: #eaf0e6; border-left: 3px solid #527a62; padding: 1.4em 1.6em; margin: 2em 0; border-radius: 0 8px 8px 0; }
+.mona-number { color: var(--mona-muted); font-size: .75em; letter-spacing: .1em; }
+.mona-callout { background: var(--mona-callout); border-left: 3px solid var(--mona-accent); padding: 1.4em 1.6em; margin: 2em 0; border-radius: 0 8px 8px 0; }
 .page__content .mona-callout h2 { margin: 0 0 .65em; border: 0; padding: 0; font-size: 1.45em; }
-.page__footer { background: #edf0e8; border-top: 1px solid #dedfd5; }
+.page__footer { background: var(--global-footer-bg-color); border-top: 1px solid var(--global-border-color); }
 @media (max-width: 900px) { .mona-cards { grid-template-columns: 1fr; } .page__title { font-size: 2em; } }
 @media (max-width: 767px) { .mona-profile { display: grid; grid-template-columns: 80px 1fr; column-gap: 20px; align-items: center; } .mona-monogram, .mona-portrait { width: 80px; height: 80px; font-size: 30px; grid-row: 1 / 5; margin: 0; } .mona-profile p, .mona-profile h3 { margin: .15em 0; } }
-html[data-theme="dark"] { --global-bg-color: #18241f; --global-text-color: #e1e8de; --global-link-color: #a9cead; --global-link-color-hover: #d6e8d5; }
-html[data-theme="dark"] body, html[data-theme="dark"] .masthead, html[data-theme="dark"] .greedy-nav { background: #18241f; }
-html[data-theme="dark"] .page__title, html[data-theme="dark"] .page__content h2, html[data-theme="dark"] .mona-lead { color: #c1ddc3; }
-html[data-theme="dark"] .mona-cards > div, html[data-theme="dark"] .mona-callout, html[data-theme="dark"] .page__footer { background: #24362c; border-color: #48604d; }
-html[data-theme="dark"] .mona-eyebrow, html[data-theme="dark"] .mona-location, html[data-theme="dark"] .mona-credentials { color: #a9bdab; }
+
+/* Theme-consistent states, including a visible keyboard focus indicator. */
+a:hover { color: var(--global-link-color-hover); }
+.page__content a:hover { text-decoration: underline; }
+a:active { color: var(--mona-accent-active); }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--mona-focus);
+  outline-offset: 4px;
+}
+.btn--primary:visited { color: var(--mona-button-text) !important; }
+.btn--primary:hover, .btn--primary:focus-visible {
+  background: var(--mona-accent-hover);
+  color: var(--mona-button-text) !important;
+}
+.btn--primary:active { background: var(--mona-accent-active); }
+.greedy-nav .visible-links a::before { background: var(--mona-accent); }
+.greedy-nav button { color: var(--mona-heading); }
+.navicon, .navicon::before, .navicon::after { background: var(--mona-heading); }
+.close .navicon { background: transparent; }
+::selection { background: var(--mona-accent); color: var(--mona-button-text); }
